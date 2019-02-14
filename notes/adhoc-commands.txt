@@ -14,3 +14,8 @@ ansible dbservers -b -i inv.ini -m file -a "path=/home/ansible/newfile owner=roo
 ### user
 ansible dbservers -i inv.ini -b -m user -a "name=san"
 ansible dbservers -i inv.ini -b -m user -a "name=san append=yes groups=wheel"
+
+
+### Variables
+ansible server1 -i inv.ini -a "ls -ld {{opt_dir}}"
+ansible multi -i inv.ini -b -a "tail {{logs}}"
