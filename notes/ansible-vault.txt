@@ -7,7 +7,6 @@ ansible-vault create host_vars/server1
 # Editing Encrypted Files
 ansible-vault edit host_vars/server1
 
-
 # Change the password of a file
 ansible-vault rekey host_vars/server1
 
