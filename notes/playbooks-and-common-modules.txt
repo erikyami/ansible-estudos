@@ -47,3 +47,6 @@
    * Defining "Changed"
    * Blocks
 
+   6 - Selectively run specified tasks in playbooks using tags
+   * How Ansible uses tags
+
