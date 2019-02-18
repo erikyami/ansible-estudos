@@ -40,3 +40,10 @@
    * when
    * with_items
    * with_files
+   
+   5 - Configure error handling
+   * Ignoring acceptable errors
+   * Defining failure conditions
+   * Defining "Changed"
+   * Blocks
+
