@@ -7,6 +7,7 @@
           name: httpd
           state: restarted
       listen: "restart web"
+
   tasks:
     - name: create dir "/opt/www"
       file:
@@ -15,7 +16,8 @@
           mode: 0755
           owner: apache
           group: apache
-    - name: change config
+ 
+   - name: change config
       replace:
           path: /etc/httpd/conf/httpd.conf
           regexp: '^DocumentRoot.*$'
