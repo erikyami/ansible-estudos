@@ -43,3 +43,20 @@ Overview
 	{{ groups['webservers']|join(' ') }}
 
 4 - What are facts?
+* Facts are information discovered by Ansible about a target system
+* There are two ways facts are collected:
+	* Using the setup module with an ad-hoc command: ansible all -m setup
+	* Facts are gathered by default when a playbook is executed
+* Fact gathering in playbooks may be disabled using the gather_facts attribute
+
+5 - How to use facts
+* Any collected facts, they may accessed through variables:
+	- {{ ansible_default_ipv4.address }}
+* It is possible to use filters with regex, in ad-hoc mode, to match certain fact names
+	- ansible labservers -m setup -a "filter=*ipv4*"
+* Facts may also be used with conditionals to have plays behave differently on hosts that meet certain criteria
+
+6 - Facts.d - custom facts
+* It is possible to define custom facts on your servers using the facts.d directory
+* Create /etc/ansible/facts.d directory on target system. All valid files within this directory ending in .fact are returned under ansible_local with facts
+* Fact files may be INI, JSON, or an executable that returns JSON
