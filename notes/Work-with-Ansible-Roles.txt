@@ -49,3 +49,16 @@ Best practice dictates that you properly namespace your variables when working w
 * templates
 	- The templates directory contains templates which can be deployed via this role
 	- Templates within this directory may be referenced without a path throughout the role
+
+* meta
+	- The meta-directory defines certain meta data for the role
+	- Relevant meta data includes role dependencies and various role level configurations such as "allow_duplicates".
+	- The meta-directory is entered via a main.yml
+
+
+
+**** Netsting
+	- Roles may include other roles using the dependencies keyword
+	- Dependent roles are applied prior to the role dependent on them
+	- A role using the same paremeters will not be applied more than one time. This can cause complication with role dependencies;
+	- Having "allow_duplicates: true" defined in meta/main.yml within a role will allow the role o be applied more than once.
