@@ -14,7 +14,7 @@ sample_role (directories)
 
 * vars
 	- The vars directory contains variables used within the role
-	- The varas directory is entered via a main.yml
+	- The vars directory is entered via a main.yml
 	- The vars directory is one of three primary ways to interact with variables within a role ( aside from conventional variable use such as inventory). The other two ways are using the defaults directory and passing parameters to the role
 	- The vars directory has the highest level of precedence. It will override inventory variable as well.
 	- The vars directory may only be overridden by passed via CLI
